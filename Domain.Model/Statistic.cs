@@ -1,6 +1,4 @@
-﻿using Domain.Model;
-
-namespace Domain.Services.Statistics
+﻿namespace Domain.Model
 {
     public class Statistic
     {

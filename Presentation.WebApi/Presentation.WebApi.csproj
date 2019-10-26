@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TextAnalyser.Application.Services\Application.Services.csproj" />
-    <ProjectReference Include="..\TextAnalyser.Dto\Application.Dto.csproj" />
+    <ProjectReference Include="..\Application.Services\Application.Services.csproj" />
+    <ProjectReference Include="..\Application.Dto\Application.Dto.csproj" />
   </ItemGroup>
 
 </Project>

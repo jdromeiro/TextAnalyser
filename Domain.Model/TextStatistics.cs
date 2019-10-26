@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Domain.Services.Statistics;
 
 namespace Domain.Model
 {
@@ -10,6 +9,6 @@ namespace Domain.Model
             this.Statistics = new List<Statistic>();
         }
 
-        public IList<Statistic> Statistics { get; set; }
+        public List<Statistic> Statistics { get; set; }
     }
 }

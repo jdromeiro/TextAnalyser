@@ -3,19 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation.WebApi", "TextAnalyser\Presentation.WebApi.csproj", "{63ACA26E-6B77-4E1B-A1D2-5FBFE3A2ADFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation.WebApi", "Presentation.WebApi\Presentation.WebApi.csproj", "{63ACA26E-6B77-4E1B-A1D2-5FBFE3A2ADFE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Model", "TextAnalyser.Domain\Domain.Model.csproj", "{5B6EF8E1-5B08-4D94-8016-A9FDEF98A90D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Model", "Domain.Model\Domain.Model.csproj", "{5B6EF8E1-5B08-4D94-8016-A9FDEF98A90D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Dto", "TextAnalyser.Dto\Application.Dto.csproj", "{FCDA019D-AA47-44DF-AD9F-903DEB01D476}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Dto", "Application.Dto\Application.Dto.csproj", "{FCDA019D-AA47-44DF-AD9F-903DEB01D476}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Services", "TextAnalyser.Application.Services\Application.Services.csproj", "{40D1ED04-69B8-4C77-A302-4AF0632F1E54}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 Presentation", "1.1 Presentation", "{A1D3ED45-06D9-4434-B0A6-09F51566B45C}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.2 Application", "1.2 Application", "{54C2A06E-A3D7-4766-AA4D-E12301CB6D9A}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.3 Domain", "1.3 Domain", "{04AEC162-55BC-4B89-9CDA-C417A215156A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Services", "Application.Services\Application.Services.csproj", "{40D1ED04-69B8-4C77-A302-4AF0632F1E54}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Services", "Domain.Services\Domain.Services.csproj", "{0467F4A0-034C-4AF3-A5DD-313205451104}"
 EndProject

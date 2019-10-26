@@ -1,4 +1,5 @@
 ﻿using System;
+using Domain.Model;
 
 namespace Domain.Services.Statistics.Commands
 {

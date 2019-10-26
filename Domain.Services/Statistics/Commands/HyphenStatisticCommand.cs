@@ -1,4 +1,6 @@
-﻿namespace Domain.Services.Statistics.Commands
+﻿using Domain.Model;
+
+namespace Domain.Services.Statistics.Commands
 {
     public class HyphenStatisticCommand : IStatisticsCommand
     {
