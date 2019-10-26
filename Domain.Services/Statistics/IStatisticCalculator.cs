@@ -1,8 +1,8 @@
 ﻿using Domain.Model;
 
-namespace Domain.Services.Statistics.Strategies
+namespace Domain.Services.Statistics
 {
-    internal interface IStatisticStrategy
+    internal interface IStatisticCalculator
     {
         Statistic GenerateStatistic(string text);
     }

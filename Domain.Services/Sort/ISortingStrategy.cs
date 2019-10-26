@@ -5,6 +5,6 @@ namespace Domain.Services
 {
     public interface ISortingStrategy
     {
-        IEnumerable<Paragraph> Sort(IEnumerable<Paragraph> paragraphs);
+        IList<Paragraph> Sort(IList<Paragraph> paragraphs);
     }
 }

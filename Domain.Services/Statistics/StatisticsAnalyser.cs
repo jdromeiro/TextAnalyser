@@ -1,33 +1,32 @@
 ﻿using System.Collections.Generic;
 using Domain.Model;
-using Domain.Services.Statistics.Buider;
 using Domain.Services.Statistics.Builder;
 
 namespace Domain.Services.Statistics
 {
     internal class StatisticsAnalyser : IStatisticsAnalyser
     {
-        private readonly IStatisticStrategiesBuilder builder;
+        private readonly IStatisticCalculatorsBuilder statisticCalculatorsBuilder;
 
         public StatisticsAnalyser()
         {
             // TODO inject dependency
-            this.builder = new StatisticStrategiesBuilder();
+            this.statisticCalculatorsBuilder = new StatisticCalculatorsBuilder();
         }
 
         public TextStatistics CreateStatistics(string text)
         {
             var statistics = new List<Statistic>();
 
-            var statisticsStrategies = this.builder
-                .WithWordStatisticStrategy()
-                .WithSpacesStatisticStrategy()
-                .WithHyphensStatisticStrategy()
+            var calculators = this.statisticCalculatorsBuilder
+                .WithWordsCount()
+                .WithSpacesCount()
+                .WithHyphensCount()
                 .Build();
 
-            foreach (var strategy in statisticsStrategies)
+            foreach (var calculator in calculators)
             {
-                statistics.Add(strategy.GenerateStatistic(text));
+                statistics.Add(calculator.GenerateStatistic(text));
             }
 
             return new TextStatistics()

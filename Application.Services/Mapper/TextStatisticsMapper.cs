@@ -14,7 +14,7 @@ namespace Application.Services.Mapper
                 var statisticDto = new StatisticDto()
                 {
                     Count = stat.Value,
-                    Type = (StatisticTypeDto)stat.Type
+                    Type = stat.Type.ToString()
                 };
 
                 statisticsDto.Statistics.Add(statisticDto);

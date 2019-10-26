@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Presentation.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class TextController : ControllerBase
     {
@@ -16,14 +16,14 @@ namespace Presentation.WebApi.Controllers
         }
 
         // GET api/statistics
-        [HttpGet("statistics")]
+        [HttpPost("statistics")]
         public ActionResult<TextStatisticsDto> Get([FromBody] string text)
         {
             return this.textApplicationService.GetTextStatistics(text);
         }
 
         // PUT api/sort/1
-        [HttpGet("sort{sortId}")]
+        [HttpPost("sort{sortId}")]
         public ActionResult<string> Get([FromBody] string text, int sortId)
         {
             var sortOption = (TextSortOptionDto)sortId;

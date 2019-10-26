@@ -6,13 +6,13 @@ namespace Domain.Services.Sort.Strategies
 {
     internal class ByReversedAlphabeticOrderSortingStrategy : ISortingStrategy
     {
-        public IEnumerable<Paragraph> Sort(IEnumerable<Paragraph> paragraphs)
+        public IList<Paragraph> Sort(IList<Paragraph> paragraphs)
         {
             var sortedParagraphs = paragraphs.ToList();
             sortedParagraphs.Sort(new ParagraphComparer());
             sortedParagraphs.Reverse();
 
-            return sortedParagraphs;
+            return sortedParagraphs.ToList();
         }
     }
 }

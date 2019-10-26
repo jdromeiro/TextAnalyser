@@ -6,12 +6,12 @@ namespace Domain.Services.Sort.Strategies
 {
     internal class ByAlphabeticOrderSortingStrategy : ISortingStrategy
     {
-        public IEnumerable<Paragraph> Sort(IEnumerable<Paragraph> paragraphs)
+        public IList<Paragraph> Sort(IList<Paragraph> paragraphs)
         {
             var sortedParagraphs = paragraphs.ToList();
             sortedParagraphs.Sort(new ParagraphComparer());
 
-            return sortedParagraphs;
+            return sortedParagraphs.ToList();
         }
     }
 }

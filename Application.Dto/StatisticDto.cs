@@ -4,6 +4,6 @@
     {
         public int Count { get; set; }
 
-        public StatisticTypeDto Type { get; set; }
+        public string Type { get; set; }
     }
 }

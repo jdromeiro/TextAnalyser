@@ -8,14 +8,14 @@ namespace Domain.Services.Common
     {
         private readonly string paragraphCharacter = "\n";
 
-        public IEnumerable<Paragraph> ConvertToParagraphs(string text)
+        public IList<Paragraph> ConvertToParagraphs(string text)
         {
             var textLines = text.Split(new string[] { paragraphCharacter }, System.StringSplitOptions.None);
 
-            return textLines.Select(dl => new Paragraph() { Text = dl });
+            return textLines.Select(dl => new Paragraph(dl)).ToList();
         }
 
-        public string ConvertToString(IEnumerable<Paragraph> paragraphs)
+        public string ConvertToString(IList<Paragraph> paragraphs)
         {
             return paragraphs.Select(p => p.Text)
                 .Aggregate((current, next) => current + paragraphCharacter + next);

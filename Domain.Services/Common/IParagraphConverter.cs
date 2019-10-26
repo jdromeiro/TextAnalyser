@@ -5,8 +5,8 @@ namespace Domain.Services.Common
 {
     internal interface IParagraphConverter
     {
-        IEnumerable<Paragraph> ConvertToParagraphs(string text);
+        IList<Paragraph> ConvertToParagraphs(string text);
 
-        string ConvertToString(IEnumerable<Paragraph> paragraphs);
+        string ConvertToString(IList<Paragraph> paragraphs);
     }
 }

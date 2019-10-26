@@ -1,10 +1,10 @@
 using Domain.Model;
-using Domain.Services.Statistics.Strategies;
+using Domain.Services.Statistics.Calculators;
 using Xunit;
 
 namespace Domain.Services.Tests
 {
-    public class StatisticsStrategiesTests
+    public class StatisticCalculatorsTests
     {
         private readonly string testString = "Imagine there's no countries\r\n"
             + "-It isn't hard to do-\r\n"
@@ -12,15 +12,15 @@ namespace Domain.Services.Tests
             + "-And no religion, too-";
 
         [Fact]
-        public void HyphenCountStrategy_GenerateStatistics_Success()
+        public void HyphenCount_GenerateStatistics_Success()
         {
             // arrange
             var text = testString;
 
-            var hyphenCountStrategy = new HyphenCountStrategy();
+            var calculator = new HyphenCount();
 
             // act
-            var statistic = hyphenCountStrategy.GenerateStatistic(text);
+            var statistic = calculator.GenerateStatistic(text);
 
             // assert
             Assert.Equal(StatisticType.NumberOfHyphens, statistic.Type);
@@ -28,15 +28,15 @@ namespace Domain.Services.Tests
         }
 
         [Fact]
-        public void SpaceCountStrategy_GenerateStatistics_Success()
+        public void SpaceCount_GenerateStatistics_Success()
         {
             // arrange
             var text = testString;
 
-            var spaceCountStrategy = new SpaceCountStrategy();
+            var calculator = new SpaceCount();
 
             // act
-            var statistic = spaceCountStrategy.GenerateStatistic(text);
+            var statistic = calculator.GenerateStatistic(text);
 
             // assert
             Assert.Equal(StatisticType.NumberOfSpaces, statistic.Type);
@@ -44,15 +44,15 @@ namespace Domain.Services.Tests
         }
 
         [Fact]
-        public void WordCountStrategy_GenerateStatistics_Success()
+        public void WordCount_GenerateStatistics_Success()
         {
             // arrange
             var text = testString;
 
-            var wordCountStrategy = new WordCountStrategy();
+            var calculator = new WordCount();
 
             // act
-            var statistic = wordCountStrategy.GenerateStatistic(text);
+            var statistic = calculator.GenerateStatistic(text);
 
             // assert
             Assert.Equal(StatisticType.NumberOfWords, statistic.Type);

@@ -3,11 +3,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace TextAnalyser
 {
     public class Startup
     {
+        private const string SWAGGER_URL = @"/swagger/v1/swagger.json";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -31,6 +34,13 @@ namespace TextAnalyser
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint(SWAGGER_URL, "Text Analyser V1");
+            });
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -38,7 +48,10 @@ namespace TextAnalyser
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            //services.AddSwa
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new Info { Title = "Text Analyser", Version = "v1" });
+            });
         }
     }
 }

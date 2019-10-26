@@ -16,7 +16,7 @@ namespace Domain.Services.Sort
                     return new ByReversedAlphabeticOrderSortingStrategy();
 
                 case TextSortOption.ByReversedOrder:
-                    return new ByReverseOrderStrategy();
+                    return new ByReversedOrderSortingStrategy();
 
                 case TextSortOption.Unknown:
                 default:
