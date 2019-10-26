@@ -23,7 +23,7 @@ namespace Presentation.WebApi.Controllers
         }
 
         // PUT api/sort/1
-        [HttpPost("sort{sortId}")]
+        [HttpPost("sort/{sortId}")]
         public ActionResult<string> Get([FromBody] string text, int sortId)
         {
             var sortOption = (TextSortOptionDto)sortId;
