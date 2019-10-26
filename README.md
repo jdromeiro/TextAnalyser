@@ -9,6 +9,6 @@ Returns statistics about the string passed:
 
 ## endpoint api/v1/text/sort/{id}
 Returns the text reorder according to a sort logic
-1 - ByAlphabeticOrder
-2 - ByReversedAlphabeticOrder
-3 - ByReversedOrder
+- 1 - ByAlphabeticOrder
+- 2 - ByReversedAlphabeticOrder
+- 3 - ByReversedOrder
