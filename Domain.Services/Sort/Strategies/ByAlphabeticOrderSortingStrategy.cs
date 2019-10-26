@@ -1,12 +1,17 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Domain.Model;
 
 namespace Domain.Services.Sort.Strategies
 {
     internal class ByAlphabeticOrderSortingStrategy : ISortingStrategy
     {
-        public string Sort(string unsortedText)
+        public IEnumerable<Paragraph> Sort(IEnumerable<Paragraph> paragraphs)
         {
-            throw new NotImplementedException();
+            var sortedParagraphs = paragraphs.ToList();
+            sortedParagraphs.Sort(new ParagraphComparer());
+
+            return sortedParagraphs;
         }
     }
 }

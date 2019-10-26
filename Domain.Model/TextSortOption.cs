@@ -6,6 +6,6 @@
 
         ByAlphabeticOrder = 1,
         ByReversedAlphabeticOrder = 2,
-        Random = 3,
+        ByReversedOrder = 3,
     }
 }

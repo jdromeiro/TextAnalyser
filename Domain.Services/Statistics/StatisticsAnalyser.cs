@@ -7,27 +7,27 @@ namespace Domain.Services.Statistics
 {
     internal class StatisticsAnalyser : IStatisticsAnalyser
     {
-        private readonly IStatisticCommandsBuilder builder;
+        private readonly IStatisticStrategiesBuilder builder;
 
         public StatisticsAnalyser()
         {
             // TODO inject dependency
-            this.builder = new StatisticCommandsBuilder();
+            this.builder = new StatisticStrategiesBuilder();
         }
 
         public TextStatistics CreateStatistics(string text)
         {
             var statistics = new List<Statistic>();
 
-            var statisticsCommands = this.builder
-                .WithWordStatisticCommand()
-                .WithSpacesStatisticCommand()
-                .WithHyphensStatisticCommand()
+            var statisticsStrategies = this.builder
+                .WithWordStatisticStrategy()
+                .WithSpacesStatisticStrategy()
+                .WithHyphensStatisticStrategy()
                 .Build();
 
-            foreach (var command in statisticsCommands)
+            foreach (var strategy in statisticsStrategies)
             {
-                statistics.Add(command.GetStatistic(text));
+                statistics.Add(strategy.GenerateStatistic(text));
             }
 
             return new TextStatistics()

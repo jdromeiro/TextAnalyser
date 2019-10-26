@@ -1,7 +1,10 @@
-﻿namespace Domain.Services
+﻿using System.Collections.Generic;
+using Domain.Model;
+
+namespace Domain.Services
 {
     public interface ISortingStrategy
     {
-        string Sort(string unsortedText);
+        IEnumerable<Paragraph> Sort(IEnumerable<Paragraph> paragraphs);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Domain.Model;
+using Domain.Services.Common;
 using Domain.Services.Sort;
 using Domain.Services.Statistics;
 
@@ -6,8 +7,9 @@ namespace Domain.Services
 {
     public class TextEngine : ITextEngine
     {
+        private readonly IParagraphConverter paragraphConverter;
         private readonly ISortingStrategyFactory sortingStrategyFactory;
-        private readonly StatisticsAnalyser statisticsAnalyser;
+        private readonly IStatisticsAnalyser statisticsAnalyser;
 
         public TextEngine()
         {
@@ -15,6 +17,7 @@ namespace Domain.Services
 
             this.sortingStrategyFactory = new SortingStrategyFactory();
             this.statisticsAnalyser = new StatisticsAnalyser();
+            this.paragraphConverter = new ParagraphConverter();
         }
 
         public TextStatistics GetStatistics(string text)
@@ -24,9 +27,13 @@ namespace Domain.Services
 
         public string SortText(string text, TextSortOption textSortOption)
         {
+            var paragraphs = this.paragraphConverter.ConvertToParagraphs(text);
+
             var sortingStrategy = this.sortingStrategyFactory.Create(textSortOption);
 
-            return sortingStrategy.Sort(text);
+            var sortedParagraphs = sortingStrategy.Sort(paragraphs);
+
+            return this.paragraphConverter.ConvertToString(sortedParagraphs);
         }
     }
 }
