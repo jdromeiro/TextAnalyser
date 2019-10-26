@@ -3,7 +3,7 @@ using Domain.Model;
 
 namespace Domain.Services.Statistics.Strategies
 {
-    public class HyphenCountStrategy : IStatisticStrategy
+    internal class HyphenCountStrategy : IStatisticStrategy
     {
         public Statistic GenerateStatistic(string text)
         {

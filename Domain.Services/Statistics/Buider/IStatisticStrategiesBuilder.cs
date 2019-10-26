@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Domain.Services.Statistics.Commands;
+using Domain.Services.Statistics.Strategies;
 
 namespace Domain.Services.Statistics.Builder
 {

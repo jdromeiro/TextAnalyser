@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Domain.Services.Statistics.Builder;
-using Domain.Services.Statistics.Commands;
+using Domain.Services.Statistics.Strategies;
 
 namespace Domain.Services.Statistics.Buider
 {
@@ -34,7 +34,7 @@ namespace Domain.Services.Statistics.Buider
 
         public IStatisticStrategiesBuilder WithWordStatisticStrategy()
         {
-            statisticsStrategies.Add(new WordCountCommand());
+            statisticsStrategies.Add(new WordCountStrategy());
 
             return this;
         }

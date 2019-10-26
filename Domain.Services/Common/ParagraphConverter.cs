@@ -6,7 +6,7 @@ namespace Domain.Services.Common
 {
     internal class ParagraphConverter : IParagraphConverter
     {
-        private readonly string paragraphCharacter = "\r\n";
+        private readonly string paragraphCharacter = "\n";
 
         public IEnumerable<Paragraph> ConvertToParagraphs(string text)
         {

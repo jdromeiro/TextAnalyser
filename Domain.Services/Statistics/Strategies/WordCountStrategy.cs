@@ -2,7 +2,7 @@
 
 namespace Domain.Services.Statistics.Strategies
 {
-    internal class WordCountCommand : IStatisticStrategy
+    internal class WordCountStrategy : IStatisticStrategy
     {
         public Statistic GenerateStatistic(string text)
         {
