@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.Services\Domain.Services.csproj" />
+    <ProjectReference Include="..\TextAnalyser.Domain\Domain.Model.csproj" />
+    <ProjectReference Include="..\TextAnalyser.Dto\Application.Dto.csproj" />
+  </ItemGroup>
+
+</Project>
