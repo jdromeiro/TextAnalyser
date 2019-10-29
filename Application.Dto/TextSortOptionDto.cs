@@ -5,7 +5,7 @@
         Unknown = 0,
 
         ByAlphabeticOrder = 1,
-        ByAlphabeticOrderReversed = 2,
-        Random = 3,
+        ByReversedAlphabeticOrder = 2,
+        ByReversedOrder = 3,
     }
 }
