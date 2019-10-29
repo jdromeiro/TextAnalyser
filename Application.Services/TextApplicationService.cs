@@ -19,18 +19,18 @@ namespace Application.Services
             this.textStatisticsMapper = new TextStatisticsMapper();
         }
 
-        public TextStatisticsDto GetTextStatistics(string document)
+        public TextStatisticsDto GetTextStatistics(string text)
         {
-            var statistics = this.textEngine.GetStatistics(document);
+            var statistics = this.textEngine.GetStatistics(text);
 
             return this.textStatisticsMapper.MapToDto(statistics);
         }
 
-        public string SortText(string document, TextSortOptionDto sortOptionDto)
+        public string SortText(string text, TextSortOptionDto sortOptionDto)
         {
             var sortOption = this.sortOptionMapper.MapToDomain(sortOptionDto);
 
-            return this.textEngine.SortText(document, sortOption);
+            return this.textEngine.SortText(text, sortOption);
         }
     }
 }
