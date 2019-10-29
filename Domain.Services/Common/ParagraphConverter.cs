@@ -12,7 +12,7 @@ namespace Domain.Services.Common
         {
             var textLines = text.Split(new string[] { paragraphCharacter }, System.StringSplitOptions.None);
 
-            return textLines.Select(dl => new Paragraph(dl)).ToList();
+            return textLines.Select(tl => new Paragraph(tl)).ToList();
         }
 
         public string ConvertToString(IList<Paragraph> paragraphs)
