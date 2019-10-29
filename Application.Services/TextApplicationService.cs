@@ -8,7 +8,7 @@ namespace Application.Services
     {
         private readonly ISortOptionMapper sortOptionMapper;
         private readonly ITextEngine textEngine;
-        private readonly ITextStatisticsMapper textStatisticsAdapter;
+        private readonly ITextStatisticsMapper textStatisticsMapper;
 
         public TextApplicationService()
         {
@@ -16,14 +16,14 @@ namespace Application.Services
 
             this.textEngine = new TextEngine();
             this.sortOptionMapper = new SortOptionMapper();
-            this.textStatisticsAdapter = new TextStatisticsMapper();
+            this.textStatisticsMapper = new TextStatisticsMapper();
         }
 
         public TextStatisticsDto GetTextStatistics(string document)
         {
             var statistics = this.textEngine.GetStatistics(document);
 
-            return this.textStatisticsAdapter.MapToDto(statistics);
+            return this.textStatisticsMapper.MapToDto(statistics);
         }
 
         public string SortText(string document, TextSortOptionDto sortOptionDto)
