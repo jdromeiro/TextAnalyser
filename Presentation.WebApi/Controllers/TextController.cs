@@ -8,21 +8,21 @@ namespace Presentation.WebApi.Controllers
     [ApiController]
     public class TextController : ControllerBase
     {
-        private ITextApplicationService textApplicationService;
+        private readonly ITextApplicationService textApplicationService;
 
-        public TextController()
+        public TextController(ITextApplicationService textApplicationService)
         {
-            this.textApplicationService = new TextApplicationService();
+            this.textApplicationService = textApplicationService;
         }
 
-        // GET api/statistics
+        // POST api/statistics
         [HttpPost("statistics")]
         public ActionResult<TextStatisticsDto> Get([FromBody] string text)
         {
             return this.textApplicationService.GetTextStatistics(text);
         }
 
-        // PUT api/sort/1
+        // POST api/sort/1
         [HttpPost("sort/{sortId}")]
         public ActionResult<string> Get([FromBody] string text, int sortId)
         {

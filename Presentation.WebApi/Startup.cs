@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Infrastructure.IoC;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -52,6 +53,8 @@ namespace TextAnalyser
             {
                 options.SwaggerDoc("v1", new Info { Title = "Text Analyser", Version = "v1" });
             });
+
+            DependencyInjectionBootstraper.RegisterServices(services);
         }
     }
 }

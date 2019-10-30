@@ -1,8 +1,8 @@
-﻿using Domain.Model;
-
-namespace Domain.Services.Statistics
+﻿namespace Domain.Services.Statistics
 {
-    internal interface IStatisticsAnalyser
+    using Domain.Model;
+
+    public interface IStatisticsAnalyser
     {
         TextStatistics CreateStatistics(string text);
     }

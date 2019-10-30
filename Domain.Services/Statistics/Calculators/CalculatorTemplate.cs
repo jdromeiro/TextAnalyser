@@ -1,7 +1,7 @@
-﻿using Domain.Model;
-
-namespace Domain.Services.Statistics.Calculators
+﻿namespace Domain.Services.Statistics.Calculators
 {
+    using Domain.Model;
+
     public abstract class CalculatorTemplate : IStatisticCalculator
     {
         public abstract StatisticType StatisticType { get; }

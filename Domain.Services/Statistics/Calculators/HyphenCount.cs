@@ -1,8 +1,8 @@
-﻿using System.Linq;
-using Domain.Model;
-
-namespace Domain.Services.Statistics.Calculators
+﻿namespace Domain.Services.Statistics.Calculators
 {
+    using System.Linq;
+    using Domain.Model;
+
     internal class HyphenCount : CalculatorTemplate
     {
         public override StatisticType StatisticType => StatisticType.NumberOfHyphens;

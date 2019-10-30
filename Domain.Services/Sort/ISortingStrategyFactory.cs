@@ -2,7 +2,7 @@
 
 namespace Domain.Services
 {
-    internal interface ISortingStrategyFactory
+    public interface ISortingStrategyFactory
     {
         ISortingStrategy Create(TextSortOption textSortOption);
     }

@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using Domain.Services.Statistics.Calculators;
-
-namespace Domain.Services.Statistics.Builder
+﻿namespace Domain.Services.Statistics.Builder
 {
+    using System.Collections.Generic;
+    using Domain.Services.Statistics.Calculators;
+
     internal class StatisticCalculatorsBuilder : IStatisticCalculatorsBuilder
     {
         private List<IStatisticCalculator> statisticsStrategies;

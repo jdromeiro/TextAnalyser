@@ -1,17 +1,16 @@
-﻿using System.Collections.Generic;
-using Domain.Model;
-using Domain.Services.Statistics.Builder;
-
-namespace Domain.Services.Statistics
+﻿namespace Domain.Services.Statistics
 {
+    using System.Collections.Generic;
+    using Domain.Model;
+    using Domain.Services.Statistics.Builder;
+
     internal class StatisticsAnalyser : IStatisticsAnalyser
     {
         private readonly IStatisticCalculatorsBuilder statisticCalculatorsBuilder;
 
-        public StatisticsAnalyser()
+        public StatisticsAnalyser(IStatisticCalculatorsBuilder statisticCalculatorsBuilder)
         {
-            // TODO inject dependency
-            this.statisticCalculatorsBuilder = new StatisticCalculatorsBuilder();
+            this.statisticCalculatorsBuilder = statisticCalculatorsBuilder;
         }
 
         public TextStatistics CreateStatistics(string text)

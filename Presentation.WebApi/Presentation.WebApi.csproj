@@ -9,12 +9,18 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Application.Services\Application.Services.csproj" />
     <ProjectReference Include="..\Application.Dto\Application.Dto.csproj" />
+    <ProjectReference Include="..\Infrastructure.IoC\Infrastructure.IoC.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DependencyInjection\" />
   </ItemGroup>
 
 </Project>

@@ -10,13 +10,15 @@ namespace Application.Services
         private readonly ITextEngine textEngine;
         private readonly ITextStatisticsMapper textStatisticsAdapter;
 
-        public TextApplicationService()
+        public TextApplicationService(
+            ITextEngine textEngine,
+            ISortOptionMapper sortOptionMapper,
+            ITextStatisticsMapper textStatisticsAdapter
+            )
         {
-            // TODO inject dependencies
-
-            this.textEngine = new TextEngine();
-            this.sortOptionMapper = new SortOptionMapper();
-            this.textStatisticsAdapter = new TextStatisticsMapper();
+            this.textEngine = textEngine;
+            this.sortOptionMapper = sortOptionMapper;
+            this.textStatisticsAdapter = textStatisticsAdapter;
         }
 
         public TextStatisticsDto GetTextStatistics(string document)

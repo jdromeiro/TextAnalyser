@@ -3,7 +3,7 @@ using Domain.Model;
 
 namespace Domain.Services.Common
 {
-    internal interface IParagraphConverter
+    public interface IParagraphConverter
     {
         IList<Paragraph> ConvertToParagraphs(string text);
 

@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace Domain.Services.Statistics.Builder
+﻿namespace Domain.Services.Statistics.Builder
 {
+    using System.Collections.Generic;
+
     internal interface IStatisticCalculatorsBuilder
     {
         IEnumerable<IStatisticCalculator> Build();

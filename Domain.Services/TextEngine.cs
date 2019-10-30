@@ -1,23 +1,24 @@
-﻿using Domain.Model;
-using Domain.Services.Common;
-using Domain.Services.Sort;
-using Domain.Services.Statistics;
-
-namespace Domain.Services
+﻿namespace Domain.Services
 {
+    using Domain.Model;
+    using Domain.Services.Common;
+    using Domain.Services.Statistics;
+
     public class TextEngine : ITextEngine
     {
         private readonly IParagraphConverter paragraphConverter;
         private readonly ISortingStrategyFactory sortingStrategyFactory;
         private readonly IStatisticsAnalyser statisticsAnalyser;
 
-        public TextEngine()
+        public TextEngine(
+            IParagraphConverter paragraphConverter,
+            ISortingStrategyFactory sortingStrategyFactory,
+            IStatisticsAnalyser statisticsAnalyser
+            )
         {
-            // TODO inject dependencies
-
-            this.sortingStrategyFactory = new SortingStrategyFactory();
-            this.statisticsAnalyser = new StatisticsAnalyser();
-            this.paragraphConverter = new ParagraphConverter();
+            this.paragraphConverter = paragraphConverter;
+            this.sortingStrategyFactory = sortingStrategyFactory;
+            this.statisticsAnalyser = statisticsAnalyser;
         }
 
         public TextStatistics GetStatistics(string text)
