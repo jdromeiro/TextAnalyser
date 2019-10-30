@@ -8,31 +8,31 @@ namespace Application.Services
     {
         private readonly ISortOptionMapper sortOptionMapper;
         private readonly ITextEngine textEngine;
-        private readonly ITextStatisticsMapper textStatisticsAdapter;
+        private readonly ITextStatisticsMapper TextStatisticsMapper;
 
         public TextApplicationService(
             ITextEngine textEngine,
             ISortOptionMapper sortOptionMapper,
-            ITextStatisticsMapper textStatisticsAdapter
+            ITextStatisticsMapper TextStatisticsMapper
             )
         {
             this.textEngine = textEngine;
             this.sortOptionMapper = sortOptionMapper;
-            this.textStatisticsAdapter = textStatisticsAdapter;
+            this.textStatisticsAdapter = TextStatisticsMapper;
         }
 
-        public TextStatisticsDto GetTextStatistics(string document)
+        public TextStatisticsDto GetTextStatistics(string text)
         {
-            var statistics = this.textEngine.GetStatistics(document);
+            var statistics = this.textEngine.GetStatistics(text);
 
-            return this.textStatisticsAdapter.MapToDto(statistics);
+            return this.textStatisticsMapper.MapToDto(statistics);
         }
 
-        public string SortText(string document, TextSortOptionDto sortOptionDto)
+        public string SortText(string text, TextSortOptionDto sortOptionDto)
         {
             var sortOption = this.sortOptionMapper.MapToDomain(sortOptionDto);
 
-            return this.textEngine.SortText(document, sortOption);
+            return this.textEngine.SortText(text, sortOption);
         }
     }
 }
