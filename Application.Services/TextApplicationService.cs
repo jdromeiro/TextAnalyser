@@ -18,14 +18,14 @@ namespace Application.Services
         {
             this.textEngine = textEngine;
             this.sortOptionMapper = sortOptionMapper;
-            this.textStatisticsAdapter = TextStatisticsMapper;
+            this.TextStatisticsMapper = TextStatisticsMapper;
         }
 
         public TextStatisticsDto GetTextStatistics(string text)
         {
             var statistics = this.textEngine.GetStatistics(text);
 
-            return this.textStatisticsMapper.MapToDto(statistics);
+            return this.TextStatisticsMapper.MapToDto(statistics);
         }
 
         public string SortText(string text, TextSortOptionDto sortOptionDto)
